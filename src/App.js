@@ -10,7 +10,6 @@ import {
   CryptoDetails,
 } from "./components";
 import "./App.css";
-import { Home } from "@mui/icons-material";
 
 const App = () => {
   return (
@@ -29,7 +28,7 @@ const App = () => {
                 path="/cryptocurrencies"
                 element={<Cryptocurrencies />}
               />
-              <Route exact path="/cryptodetails" element={<CryptoDetails />} />
+              <Route exact path="/crypto/:coinId" element={<CryptoDetails />} />
               <Route exact path="/News" element={<News />} />
             </Routes>
           </div>
