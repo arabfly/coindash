@@ -3,7 +3,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import { Layout, Typography, Space } from "antd";
 import {
   Navbar,
-  Exchanges,
+  Hero,
   Homepage,
   Cryptocurrencies,
   News,
@@ -19,18 +19,23 @@ const App = () => {
       </div>
       <div className="main">
         <Layout>
-          <div className="routes">
-            <Routes>
-              <Route exact path="/homepage" element={<Homepage />} />
-              <Route exact path="/exchanges" element={<Exchanges />} />
-              <Route
-                exact
-                path="/cryptocurrencies"
-                element={<Cryptocurrencies />}
-              />
-              <Route exact path="/crypto/:coinId" element={<CryptoDetails />} />
-              <Route exact path="/News" element={<News />} />
-            </Routes>
+          <div>
+            <div>
+              <Routes>
+                <Route exact path="/" element={<Homepage />} />
+                <Route
+                  exact
+                  path="/cryptocurrencies"
+                  element={<Cryptocurrencies />}
+                />
+                <Route
+                  exact
+                  path="/crypto/:coinId"
+                  element={<CryptoDetails />}
+                />
+                <Route exact path="/News" element={<News />} />
+              </Routes>
+            </div>
           </div>
         </Layout>
         <div className="footer">
@@ -44,9 +49,6 @@ const App = () => {
           <Space>
             <Link to="/homepage" element={<Homepage />}>
               Home
-            </Link>
-            <Link to="/exchange" element={<Exchanges />}>
-              Exchanges
             </Link>
             <Link to="/news" element={<News />}>
               News
