@@ -47,23 +47,31 @@ const Navbar = () => {
           <ul>
             <li icon={<HomeOutlined />}>
               <a>
-                <Link to={"/"}>Home</Link>
+                <Link className="nav-list-style" to={"/"}>
+                  Home
+                </Link>
               </a>
             </li>
             <li icon={<FundOutlined />}>
               <a>
-                <Link to={"/cryptocurrencies"}>Cryptocurrencies</Link>
+                <Link className="nav-list-style" to={"/cryptocurrencies"}>
+                  Cryptocurrencies
+                </Link>
               </a>
             </li>
             <li icon={<BulbOutlined />}>
               <a>
-                <Link to={"/news"}>News</Link>
+                <Link className="nav-list-style" to={"/news"}>
+                  News
+                </Link>
               </a>
             </li>
           </ul>
         )}
         <h1 className="logo">
-          <Link to={"/"}>CoinDash</Link>
+          <Link className="logo-style" to={"/"}>
+            COINDASH
+          </Link>
         </h1>
       </nav>
     </div>

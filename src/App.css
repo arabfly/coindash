@@ -1,19 +1,20 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@200;300;400;500;600;700&family=Staatliches&display=swap');
+
 :root{
     --text-primary:#000;
-    --bgPrimary:#fff;
-   --bgSecondary: #F9F9F9;
-   --pink: #0071bd;
-   --light-blue: #e6f7ff;
-   --border: #d9d9d9;
+    --bgPrimary:black;
+   --bgSecondary: black;
+   --pink: black;
+   --light-blue: black;
+   --border: black;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Bai Jamjuree', sans-serif;
 }
 
 a:hover{
@@ -28,8 +29,8 @@ a:hover{
 
 .navbar{
     flex: 1;
-    background-color: #00072D;
-    font-family: 'Roboto', sans-serif;
+    background-color: #050605;
+    font-family: 'Bai Jamjuree', sans-serif;
 }
 
 
@@ -47,8 +48,63 @@ a:hover{
 .homepage {
     margin-left: 10vw; 
     margin-right: 10vw;
-    margin-top: 10vh; 
+    margin-top: 7vh;
+    
 }
+
+.main-homepage {
+    background-color: #050605;
+    color: white;
+}
+
+.grid-container {
+    display: flex;
+    padding-top: 10px;
+    justify-content: left;
+    margin-left: 100px;
+    align-items: center;
+
+}
+
+.grid-item {
+    margin: 40px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+    width: 200px;
+}
+
+.grid-item > p {
+    
+    text-align: center;
+    width: 200px;
+    padding-bottom: 10px;
+    font-size: 1.2rem;
+    font-weight: 300;
+
+}
+
+.grid-stat {
+    border: none 1px black;
+    padding: 10px 30px 10px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    background: #f47952;
+    transition: ease-out 0.3s;
+}
+
+.grid-stat:hover {
+    padding: 15px 40px 15px 40px;
+    font-size: 1.3rem;
+    transition: ease-in-out 0.3s;
+    filter: drop-shadow(0mm 0mm 20mm rgb(166, 166, 197));
+}
+
+
+
 .nav-container{
     display: flex;
     align-items: center;
@@ -56,21 +112,38 @@ a:hover{
     justify-content: space-between;
     width: 100%;
     height: 100px;
-    background-color: #00072D;
+    background-color: #050605;
 }
 
 
-li {
+ul > li {
     display: inline-block;
     font-style: none;
-    padding: 0px 50px;
+    padding: 0 50px;
     font-size: 1.2rem;
+    
 }
 
-a {
+ul {
+    display: flex;
+    align-items: center;
+}
+
+
+.nav-list-style {
     color: white;
     border: none;
     text-decoration: none;
+    border-radius: 50px;
+    padding: 10px;
+    transition: ease-in-out 0.3s;
+}
+
+.nav-list-style:hover {
+    border-radius: 50px;
+    color: black;
+    background-color: white;
+    transition: ease-in-out 0.3s;
 }
 
 .nav-logo-container {
@@ -89,6 +162,15 @@ a {
     margin:0 0 0 15px;
     font-size: 2rem;
 }
+
+.logo-style {
+    text-decoration: none;
+}
+
+.logo-style:hover {
+    color: white;
+}
+
 .logo a{
    color: white;
 }
@@ -114,16 +196,19 @@ a {
 .hero-main {
     justify-content: center;
     align-items: center;
-    gap: 100px;
     height: 700px;
     width: 100vw;
     display: flex;
     font-family: 'Roboto', sans-serif;
-    background:#00072D;
+    background: #050605;
+}
+
+.hero-bitcoin {
+    width: 800px;
 }
 
 .hero-container {
-    color: white;
+    color: rgb(255, 255, 255);
 } 
 
 .hero-title-logo-container {
@@ -144,12 +229,33 @@ a {
     width: 500px;
 }
 
+.hero-btn {
+    padding: 10px;
+    margin-top: 20px;
+    margin-left: 10px;
+    background-color: #f47952;
+    font-size: 1.3rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 10px;
+    transition: ease-in 0.3s;
+
+}
+
+.hero-btn:hover {
+    background-color: white;
+    color: black;
+    transition: ease-in-out 0.3s;
+
+}
+
 .hero-logo {
     width: 75px;
 }
 
 .heading {
-    text-align: center;
+    text-align: left;
+    margin-left: 150px;
 }
 
 @media screen and (max-width:1300px){
@@ -419,9 +525,10 @@ width: 70%;
 }
 .home-heading-container{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 20px;
     align-items: center;
-    margin-top: 40px;
+    margin-top: 200px;
 }
 .show-more{
     margin-top: 0px !important;

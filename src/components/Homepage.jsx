@@ -17,8 +17,34 @@ const Homepage = () => {
 
   if (isFetching) return <Loader />;
 
+  function millify(number, precision = 2) {
+    const prefixes = ["", "k", "M", "B", "T", "Q", "Q"];
+    const base = 1000;
+    let exponent = 1;
+
+    // Handle very large numbers using BigInt constructor
+    if (typeof number === "string" && number.startsWith("9")) {
+      const bigNumber = BigInt(number);
+      exponent = Math.min(
+        Math.floor(bigNumber.toString().length / 3),
+        prefixes.length - 1
+      );
+      number = bigNumber / BigInt(base ** exponent);
+    } else {
+      exponent = Math.min(
+        Math.floor(Math.log10(Math.abs(number)) / 3),
+        prefixes.length - 1
+      );
+      number = number / base ** exponent;
+    }
+
+    const result = parseFloat(number.toFixed(precision));
+
+    return result + prefixes[exponent];
+  }
+
   return (
-    <div>
+    <div className="main-homepage">
       <div>
         <Hero />
       </div>
@@ -26,49 +52,43 @@ const Homepage = () => {
         <Title level={2} className="heading">
           GLOBAL STATISTICS
         </Title>
-        <Row>
-          <Col span={12}>
-
-            <Statistic
-              title="Total Cryptocurrencies"
-              value={globalStats.total}
-            />
-          </Col>
-          <Col span={12}>
-
-            <Statistic
-              title="Total Exchanges"
-              value={millify(globalStats.totalExchanges)}
-            />
-          </Col>
-          <Col span={12}>
-
-            <Statistic
-              title="Total Market Cap"
-              value={millify(globalStats.totalMarketCap)}
-            />
-          </Col>
-          <Col span={12}>
-
-            <Statistic
-              title="Total 24h Volume"
-              value={millify(globalStats.total24hVolume)}
-            />
-          </Col>
-          <Col span={12}>
-            
-            <Statistic
-              title="Total Markets"
-              value={millify(globalStats.totalMarkets)}
-            />
-          </Col>
-        </Row>
+        <div className="grid-container">
+          <div>
+            <Col className="grid-item">
+              <p>Total Cryptocurrencies</p>
+              <Statistic className="grid-stat" value={globalStats.total} />
+            </Col>
+            <Col className="grid-item">
+              <p>Total Market Cap</p>
+              <Statistic
+                className="grid-stat"
+                value={millify(globalStats.totalMarketCap)}
+              />
+            </Col>
+          </div>
+          <div>
+            <Col className="grid-item">
+              <p>Total 24h Volume</p>
+              <Statistic
+                className="grid-stat"
+                value={millify(globalStats.total24hVolume.toString())}
+              />
+            </Col>
+            <Col className="grid-item">
+              <p>Total Markets</p>
+              <Statistic
+                className="grid-stat"
+                value={millify(globalStats.totalMarkets)}
+              />
+            </Col>
+          </div>
+        </div>
         <div className="home-heading-container">
           <Title level={2} className="home-title">
-            Top 10 CryptoCurrencies in the world
+            Top Cryptocurrencies
           </Title>
           <Title level={3} className="show-more">
-            <Link to={"/cryptocurrencies"}>Show More</Link>
+            <Link to={"/cryptocurrencies"}>View All</Link>
           </Title>
         </div>
         <Cryptocurrencies simplified />
@@ -77,7 +97,7 @@ const Homepage = () => {
             Latest Crypto News
           </Title>
           <Title level={3} className="show-more">
-            <Link to={"/news"}>Show More</Link>
+            <Link to={"/news"}>Explore</Link>
           </Title>
         </div>
         <News simplified />

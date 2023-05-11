@@ -7,7 +7,7 @@ import { useGetCryptosQuery } from "../services/cryptoApi";
 import Loader from "./Loader";
 
 const Cryptocurrencies = ({ simplified }) => {
-  const count = simplified ? 10 : 100;
+  const count = simplified ? 4 : 100;
 
   const { data: cryptosList, isFetching } = useGetCryptosQuery(count);
   const [cryptos, setCryptos] = useState([]);
@@ -54,7 +54,7 @@ const Cryptocurrencies = ({ simplified }) => {
                 }
                 hoverable
               >
-                <p>Price: {millify(currency.price)}</p>
+                <p>Price: $ {millify(currency.price)}</p>
                 <p>Market Cap: {millify(currency.marketCap)}</p>
                 <p>Daily Change: {millify(currency.change)}&#37;</p>
               </Card>
