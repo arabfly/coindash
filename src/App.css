@@ -1,24 +1,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@200;300;400;500;600;700&family=Staatliches&display=swap');
 
-:root{
-    --text-primary:#000;
-    --bgPrimary:black;
-   --bgSecondary: black;
-   --pink: black;
-   --light-blue: black;
-   --border: black;
-}
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Bai Jamjuree', sans-serif;
-}
-
-a:hover{
-    color: var(--pink) !important;
 }
 
 .app{
@@ -39,11 +27,35 @@ a:hover{
     margin-right: 10vw;
 }
 
+.nav-list-style:active {
+    border-radius: 50px;
+    color: black;
+    background-color: white;
+    transition: ease-in-out 0.3s;
+}
+
     
 .routes{
+    margin-top: -100px;
     margin-left: 10vw; 
     margin-right: 10vw; 
 }
+
+.cryptocurrencies-page {
+    margin-top: 50px;
+    margin-left: 10vw; 
+    margin-right: 10vw;
+    background-color: #050605;
+}
+
+.main-div {
+    background-color: #050605;
+}
+
+.layout-div {
+    background-color: #050605;
+}
+
 
 .homepage {
     margin-left: 10vw; 
@@ -52,16 +64,44 @@ a:hover{
     
 }
 
+.news-page {
+    margin-left: 10vw; 
+    margin-right: 10vw;
+    margin-bottom: 10vw;
+}
+
+.home-link {
+    border-radius: 50px;
+    padding: 10px;
+    background-color: #f47952;
+    color: black;
+    font-weight: 300;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: ease-in 0.3s;
+}
+
+.home-link:hover {
+    background-color: white;
+    color: black;
+    transition: ease-in-out 0.3s;
+}
+
 .main-homepage {
     background-color: #050605;
     color: white;
 }
 
 .grid-container {
+    background:linear-gradient(-135deg, white, #f47952);
+    color: black;
     display: flex;
     padding-top: 10px;
-    justify-content: left;
-    margin-left: 100px;
+    justify-content: center;
+    margin-top: 50px;
+    margin-left: 150px;
+    margin-right: 150px;
+    border-radius: 50px;
     align-items: center;
 
 }
@@ -77,13 +117,19 @@ a:hover{
     width: 200px;
 }
 
+.vertical-line {
+    display: inline-block;
+        border-left: 2px solid rgb(0, 0, 0);
+        margin: 0 10px;
+        height: 120px;
+}
+
 .grid-item > p {
-    
     text-align: center;
     width: 200px;
     padding-bottom: 10px;
     font-size: 1.2rem;
-    font-weight: 300;
+    font-weight: 600;
 
 }
 
@@ -92,7 +138,8 @@ a:hover{
     padding: 10px 30px 10px 30px;
     border-radius: 50px;
     font-weight: 600;
-    background: #f47952;
+    color: white;
+    background: black;
     transition: ease-out 0.3s;
 }
 
@@ -100,7 +147,7 @@ a:hover{
     padding: 15px 40px 15px 40px;
     font-size: 1.3rem;
     transition: ease-in-out 0.3s;
-    filter: drop-shadow(0mm 0mm 20mm rgb(166, 166, 197));
+
 }
 
 
@@ -230,14 +277,14 @@ ul {
 }
 
 .hero-btn {
-    padding: 10px;
+    padding: 15px;
     margin-top: 20px;
     margin-left: 10px;
     background-color: #f47952;
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-weight: 500;
     border: none;
-    border-radius: 10px;
+    border-radius: 50px;
     transition: ease-in 0.3s;
 
 }
@@ -254,8 +301,76 @@ ul {
 }
 
 .heading {
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+}
+
+.home-title {
+    color: white;
+    font-size: 2rem;
     text-align: left;
-    margin-left: 150px;
+}
+
+.crypto-card {
+    cursor: pointer;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    padding: 10px;
+    max-width: 300px;
+
+}
+
+.crypto-name {
+    color: black;
+
+    display: flex;
+    gap: 10px;
+}
+
+.crypto-info {
+    color: white;
+    margin-top: 15px;
+    font-size: 1.5rem;
+    font-weight: 900;
+    display: flex;
+    background-color: #050605;
+    align-items: center;
+    margin-left: 65px;
+    margin-right: 65px;
+    padding: 10px;
+    border-radius: 50px;
+    justify-content: center;
+    
+}
+
+.negative-change {
+    display: flex;
+    align-items: center;
+    color: red;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.positive-change {
+    display: flex;
+    align-items: center;
+    color: rgb(0, 255, 0);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.news-card {
+    background-color: white;
+}
+
+.news-home-title {
+    color: white;
+
 }
 
 @media screen and (max-width:1300px){
@@ -482,7 +597,9 @@ ul {
     justify-content: space-between !important;
 }
 .news-title{
+    margin-top: 20px;
 width: 70%;
+font-size: 1rem;
 }
 
 .news-image-container .img{
@@ -501,14 +618,31 @@ width: 70%;
     margin-left: 10px;
 }
 
+.news-provider-img {
+    width: 50px;
+}
+
+.news-img {
+    top: 0;
+    width: ;
+}
+
+.provider {
+    display: flex;
+    font-size: .5rem;
+    padding-top: 10px;
+    align-items: center;
+}
+
 .chart-header{
     display: flex;
     justify-content: space-between;
     gap: 50px;
-    color: #0071bd;
+    color: white;
 }
 .chart-title{
-    color: #0071bd !important;
+    margin-top: 50px;
+    color: white !important;
 }
 .price-container{
     display: flex !important;
@@ -525,14 +659,18 @@ width: 70%;
 }
 .home-heading-container{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    margin-left: 10vw;
+    margin-right: 10vw;
     gap: 20px;
     align-items: center;
     margin-top: 200px;
+    margin-bottom: 50px;
 }
 .show-more{
-    margin-top: 0px !important;
+    margin-top: 10px;
 }
+
 .exchange-image{
     margin: 0px 10px !important;
 }
@@ -544,26 +682,12 @@ width: 70%;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 65vh !important;
+    min-height: 40vh !important;
     transition: all 0.3s ease;
-        
+    margin-top: 75px;
+    gap: 100px;
 }
 
-.crypto-single-card {
-    border-radius: 25px;
-}
-
-
-.crypto-single-card:hover {
-    transition: ease-in-out 0.2s;
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
-}
-
-.crypto-card{
-    padding: 15px;
-    min-width: 250px;
-    
-}
 .crypto-card .crypto-image{
     width:30px;
 }
@@ -579,3 +703,72 @@ width: 70%;
     padding: 20px;
     align-items: center;
 }
+
+.cardBox {
+    width: 350px;
+    height: 300px;
+    position: relative;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+
+  }
+  
+  .card {
+    position: absolute;
+    width: 95%;
+    height: 95%;
+    background: white;
+    border-radius: 20px;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    color: black;
+    overflow: hidden;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .card .h4 {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
+    font-size: 1rem;
+    font-weight: 800;
+    pointer-events: none;
+    opacity: 1;
+  }
+  
+  .card .content .h3 {
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 10px;
+  }
+  
+  .card .content p {
+    font-size: 14px;
+    line-height: 1.4em;
+  }
+  
+  .card .content {
+    transform: translateY(100%);
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+  }
+  
+  .card:hover .content {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  .card:hover .h4 {
+    opacity: 0;
+  }
+  

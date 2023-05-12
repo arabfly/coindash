@@ -49,56 +49,48 @@ const Homepage = () => {
         <Hero />
       </div>
       <main className="homepage">
-        <Title level={2} className="heading">
+        <h1 level={2} className="heading">
           GLOBAL STATISTICS
-        </Title>
+        </h1>
         <div className="grid-container">
-          <div>
-            <Col className="grid-item">
-              <p>Total Cryptocurrencies</p>
-              <Statistic className="grid-stat" value={globalStats.total} />
-            </Col>
-            <Col className="grid-item">
-              <p>Total Market Cap</p>
-              <Statistic
-                className="grid-stat"
-                value={millify(globalStats.totalMarketCap)}
-              />
-            </Col>
-          </div>
-          <div>
-            <Col className="grid-item">
-              <p>Total 24h Volume</p>
-              <Statistic
-                className="grid-stat"
-                value={millify(globalStats.total24hVolume.toString())}
-              />
-            </Col>
-            <Col className="grid-item">
-              <p>Total Markets</p>
-              <Statistic
-                className="grid-stat"
-                value={millify(globalStats.totalMarkets)}
-              />
-            </Col>
-          </div>
+          <Col className="grid-item">
+            <p>TOTAL CRYPTOS</p>
+            <p className="grid-stat">{globalStats.total}</p>
+          </Col>
+          <span class="vertical-line"></span>
+          <Col className="grid-item">
+            <p>TOTAL MARKET CAP</p>
+            <p className="grid-stat">{millify(globalStats.totalMarketCap)}</p>
+          </Col>
+          <span class="vertical-line"></span>
+          <Col className="grid-item">
+            <p>TOTAL 24H VOLUME</p>
+            <p className="grid-stat">
+              {millify(globalStats.total24hVolume.toString())}
+            </p>
+          </Col>
+          <span class="vertical-line"></span>
+          <Col className="grid-item">
+            <p>TOTAL MARKETS</p>
+            <p className="grid-stat">{millify(globalStats.totalMarkets)}</p>
+          </Col>
         </div>
         <div className="home-heading-container">
-          <Title level={2} className="home-title">
-            Top Cryptocurrencies
-          </Title>
-          <Title level={3} className="show-more">
-            <Link to={"/cryptocurrencies"}>View All</Link>
-          </Title>
+          <h1 className="home-title">Top Cryptocurrencies</h1>
+          <h1 className="show-more">
+            <Link className="home-link" to={"/cryptocurrencies"}>
+              View All
+            </Link>
+          </h1>
         </div>
         <Cryptocurrencies simplified />
         <div className="home-heading-container">
-          <Title level={2} className="home-title">
-            Latest Crypto News
-          </Title>
-          <Title level={3} className="show-more">
-            <Link to={"/news"}>Explore</Link>
-          </Title>
+          <h1 className="news-home-title">Latest Crypto News</h1>
+          <h1 className="show-more">
+            <Link className="home-link" to={"/news"}>
+              Explore
+            </Link>
+          </h1>
         </div>
         <News simplified />
       </main>

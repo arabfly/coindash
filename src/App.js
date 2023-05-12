@@ -19,8 +19,8 @@ const App = () => {
       </div>
       <div className="main">
         <Layout>
-          <div>
-            <div>
+          <div className="layout-div">
+            <div className="main-div">
               <Routes>
                 <Route exact path="/" element={<Homepage />} />
                 <Route

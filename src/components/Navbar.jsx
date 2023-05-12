@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Button, Menu, Typography, Avatar } from "antd";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import {
   HomeOutlined,
   BulbOutlined,
@@ -47,23 +47,23 @@ const Navbar = () => {
           <ul>
             <li icon={<HomeOutlined />}>
               <a>
-                <Link className="nav-list-style" to={"/"}>
+                <NavLink className="nav-list-style" to={"/"}>
                   Home
-                </Link>
+                </NavLink>
               </a>
             </li>
             <li icon={<FundOutlined />}>
               <a>
-                <Link className="nav-list-style" to={"/cryptocurrencies"}>
+                <NavLink className="nav-list-style" to={"/cryptocurrencies"}>
                   Cryptocurrencies
-                </Link>
+                </NavLink>
               </a>
             </li>
             <li icon={<BulbOutlined />}>
               <a>
-                <Link className="nav-list-style" to={"/news"}>
+                <NavLink className="nav-list-style" to={"/news"}>
                   News
-                </Link>
+                </NavLink>
               </a>
             </li>
           </ul>

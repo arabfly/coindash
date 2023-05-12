@@ -18,7 +18,7 @@ const News = ({ simplified }) => {
   // fetch crypto news
   const { data: cryptoNews } = useGetCryptoNewsQuery({
     newsCategory,
-    count: simplified ? 6 : 12,
+    count: simplified ? 7 : 12,
   });
 
   // get 100 cryptocurrencies
@@ -28,7 +28,7 @@ const News = ({ simplified }) => {
   if (!cryptoNews?.value) return <Loader />;
 
   return (
-    <div className="routes">
+    <div className="news-page">
       <Row gutter={[24, 24]}>
         {/* Select a Crypto */}
         {!simplified && (
@@ -57,46 +57,42 @@ const News = ({ simplified }) => {
         {/* Crypto News */}
         {cryptoNews.value.map((news, i) => (
           <Col xs={24} sm={12} lg={8} key={i}>
-            <Card hoverable className="news-card">
-              <a href={news.url} target="_blank" rel="noreferrer">
-                <div className="news-image-container">
-                  {/* News Name */}
-                  <Title className="news-title" level={4}>
-                    {news.name}
-                  </Title>
-                  {/* News Thumbnail */}
-                  <img
-                    src={news?.image?.thumbnail?.contentUrl}
-                    alt={news.name}
-                    style={{ maxWidth: "200px", maxHeight: "100px" }}
-                  />
-                </div>
-                {/* News Description */}
-                <p>
-                  {news.description > 100
-                    ? `${news.description.substring(0, 100)}...`
-                    : news.description}
-                </p>
-                {/* News Provider Info */}
-                <div className="provider-container">
-                  <div>
-                    {/* Provider Avatar */}
-                    <Avatar
-                      src={news.provider[0]?.image?.thumbnail?.contentUrl}
-                      alt={news.provider[0]?.name}
+            <a href={news.url} target="_blank" rel="noreferrer">
+              <div class="cardBox">
+                <div class="card">
+                  <div class="h4">
+                    <img
+                      className="news-img"
+                      src={news?.image?.thumbnail?.contentUrl}
+                      alt={news.name}
+                      style={{ maxWidth: "200px", maxHeight: "100px" }}
                     />
-                    {/* Provider Name */}
-                    <Text className="provider-name">
-                      {news.provider[0]?.name}
-                    </Text>
+                    <h1 className="news-title" level={4}>
+                      {news.name}
+                    </h1>
+                    <div className="provider">
+                      <img
+                        className="news-provider-img"
+                        src={news.provider[0]?.image?.thumbnail?.contentUrl}
+                        alt={news.provider[0]?.name}
+                      />
+                      <h1 className="provider-name">
+                        {moment(news.datePublished).startOf("ss").fromNow()}
+                      </h1>
+                    </div>
                   </div>
-                  {/* Date Published */}
-                  <Text>
-                    {moment(news.datePublished).startOf("ss").fromNow()}
-                  </Text>
+
+                  <div class="content">
+                    <div class="h3">Description</div>
+                    <p>
+                      {news.description > 100
+                        ? `${news.description.substring(0, 100)}...`
+                        : news.description}
+                    </p>
+                  </div>
                 </div>
-              </a>
-            </Card>
+              </div>
+            </a>
           </Col>
         ))}
       </Row>

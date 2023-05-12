@@ -7,7 +7,7 @@ import { useGetCryptosQuery } from "../services/cryptoApi";
 import Loader from "./Loader";
 
 const Cryptocurrencies = ({ simplified }) => {
-  const count = simplified ? 4 : 100;
+  const count = simplified ? 6 : 100;
 
   const { data: cryptosList, isFetching } = useGetCryptosQuery(count);
   const [cryptos, setCryptos] = useState([]);
@@ -23,7 +23,7 @@ const Cryptocurrencies = ({ simplified }) => {
   if (isFetching) return <Loader />;
 
   return (
-    <div className="routes">
+    <div className="cryptocurrencies-page">
       {!simplified && (
         <div className="search-crypto">
           <Input
@@ -32,8 +32,8 @@ const Cryptocurrencies = ({ simplified }) => {
           />
         </div>
       )}
-      <Row gutter={[32, 32]} className="crypto-card-container">
-        {cryptos?.map((currency: any) => (
+      <Row gutter={[2]} className="crypto-card-container">
+        {cryptos?.map((currency) => (
           <Col
             xs={24}
             sm={12}
@@ -42,22 +42,29 @@ const Cryptocurrencies = ({ simplified }) => {
             key={currency.uuid}
           >
             <Link to={`/crypto/${currency.uuid}`}>
-              <Card
-                title={`${currency.rank}. ${currency.name}`}
-                extra={
+              <div className="crypto-card">
+                <div className="crypto-name">
                   <img
                     className="crypto-image"
                     src={currency.iconUrl}
                     alt="icon crypto"
                     preview={false}
                   />
-                }
-                hoverable
-              >
-                <p>Price: $ {millify(currency.price)}</p>
-                <p>Market Cap: {millify(currency.marketCap)}</p>
-                <p>Daily Change: {millify(currency.change)}&#37;</p>
-              </Card>
+                  <h1>{currency.name}</h1>
+                  <p
+                    className={
+                      currency.change < 0
+                        ? "negative-change"
+                        : "positive-change"
+                    }
+                  >
+                    {millify(currency.change)}&#37;
+                  </p>
+                </div>
+                <div className="crypto-info">
+                  <p>${millify(currency.price)}</p>
+                </div>
+              </div>
             </Link>
           </Col>
         ))}
