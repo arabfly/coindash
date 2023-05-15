@@ -32,17 +32,11 @@ const Cryptocurrencies = ({ simplified }) => {
           />
         </div>
       )}
-      <Row gutter={[2]} className="crypto-card-container">
+      <div className="crypto-card-container">
         {cryptos?.map((currency) => (
-          <Col
-            xs={24}
-            sm={12}
-            lg={6}
-            className="crypto-card"
-            key={currency.uuid}
-          >
+          <div className="crypto-card" key={currency.uuid}>
             <Link to={`/crypto/${currency.uuid}`}>
-              <div className="crypto-card">
+              <div className="crypto-card-2">
                 <div className="crypto-name">
                   <img
                     className="crypto-image"
@@ -66,9 +60,9 @@ const Cryptocurrencies = ({ simplified }) => {
                 </div>
               </div>
             </Link>
-          </Col>
+          </div>
         ))}
-      </Row>
+      </div>
     </div>
   );
 };

@@ -7,6 +7,7 @@ import { useGetCryptosQuery } from "../services/cryptoApi";
 import { Cryptocurrencies, News } from "../components";
 import Loader from "./Loader";
 import Hero from "./Hero";
+import statsImg from "./images/statsImg.jpg";
 
 const { Title } = Typography;
 
@@ -48,50 +49,76 @@ const Homepage = () => {
       <div>
         <Hero />
       </div>
+      <div className="about-us">
+        <h1>About Us</h1>
+        <p>
+          Stay up-to-date on the latest developments in the world of
+          cryptocurrencies with our platform. Our website provides users with
+          real-time information on global stats, news, and changes in the crypto
+          market.
+        </p>
+      </div>
+      <div className="stats-img-container">
+        <img className="stats-img" src={statsImg} alt="stats img" />
+      </div>
       <main className="homepage">
         <h1 level={2} className="heading">
           GLOBAL STATISTICS
         </h1>
         <div className="grid-container">
-          <Col className="grid-item">
+          <div className="grid-item">
             <p>TOTAL CRYPTOS</p>
             <p className="grid-stat">{globalStats.total}</p>
-          </Col>
+          </div>
           <span class="vertical-line"></span>
-          <Col className="grid-item">
+          <div className="grid-item">
             <p>TOTAL MARKET CAP</p>
             <p className="grid-stat">{millify(globalStats.totalMarketCap)}</p>
-          </Col>
+          </div>
           <span class="vertical-line"></span>
-          <Col className="grid-item">
+          <div className="grid-item">
             <p>TOTAL 24H VOLUME</p>
             <p className="grid-stat">
               {millify(globalStats.total24hVolume.toString())}
             </p>
-          </Col>
+          </div>
           <span class="vertical-line"></span>
-          <Col className="grid-item">
+          <div className="grid-item">
             <p>TOTAL MARKETS</p>
             <p className="grid-stat">{millify(globalStats.totalMarkets)}</p>
-          </Col>
+          </div>
         </div>
-        <div className="home-heading-container">
-          <h1 className="home-title">Top Cryptocurrencies</h1>
-          <h1 className="show-more">
-            <Link className="home-link" to={"/cryptocurrencies"}>
-              View All
-            </Link>
-          </h1>
+        <div className="news-heading">
+          <div className="home-heading-container">
+            <h1 className="home-title">Top Cryptocurrencies</h1>
+            <h1 className="show-more">
+              <Link className="home-link" to={"/cryptocurrencies"}>
+                All
+              </Link>
+            </h1>
+          </div>
+          <p className="crypto-p">
+            Discover cryptocurrencies with the most current information on
+            market trends, price fluctuations and other key data to help you
+            make informed invesment decisions
+          </p>
         </div>
         <Cryptocurrencies simplified />
-        <div className="home-heading-container">
-          <h1 className="news-home-title">Latest Crypto News</h1>
-          <h1 className="show-more">
-            <Link className="home-link" to={"/news"}>
-              Explore
-            </Link>
-          </h1>
+        <div className="news-heading">
+          <div className="home-heading-container">
+            <h1 className="news-home-title">Latest Crypto News</h1>
+            <h1 className="show-more">
+              <Link className="home-link" to={"/news"}>
+                Explore
+              </Link>
+            </h1>
+          </div>
+          <p className="news-p">
+            Stay informed by using our search feature for the latest news on
+            your favorite cryptocurrencies
+          </p>
         </div>
+
         <News simplified />
       </main>
     </div>

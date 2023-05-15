@@ -6,19 +6,23 @@ const Hero = () => {
   return (
     <div className="hero-container">
       <div className="hero-main">
-        <div>
+        <div className="hero-text">
           <div className="hero-title-logo-container">
             <img className="hero-logo" src={icon} alt="icon" />
             <h1 className="hero-title">COINDASH</h1>
           </div>
-          <p className="hero-p">
-            Explore the world of crypto with us. Discover the latest news,
-            trends, and insights that will help you stay ahead in this exciting
-            and rapidly evolving market.
-          </p>
+          <div className="hero-container-text">
+            <p className="hero-p">
+              Explore the world of crypto with us. Discover the latest news,
+              trends, and insights that will help you stay ahead in this
+              exciting and rapidly evolving market.
+            </p>
+          </div>
           <button className="hero-btn">View Cryptos</button>
         </div>
-        <img className="hero-bitcoin" src={bitcoin} alt="bitcoin" />
+        <div className="hero-img">
+          <img className="hero-bitcoin" src={bitcoin} alt="bitcoin" />
+        </div>
       </div>
     </div>
   );

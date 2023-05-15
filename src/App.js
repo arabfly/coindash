@@ -41,16 +41,23 @@ const App = () => {
         <div className="footer">
           <Typography.Title
             level={5}
-            style={{ color: "white", textAlign: "center" }}
+            style={{ color: "black", textAlign: "center", fontWeight: "100" }}
           >
             CoinDash <br />
-            All rights reserverd
+            By Nader Abdulrub
           </Typography.Title>
-          <Space>
-            <Link to="/homepage" element={<Homepage />}>
+          <Space className="footer-links">
+            <Link className="footer-link" to="/" element={<Homepage />}>
               Home
             </Link>
-            <Link to="/news" element={<News />}>
+            <Link
+              className="footer-link"
+              to="/cryptocurrencies"
+              element={<News />}
+            >
+              Cryptocurrencies
+            </Link>
+            <Link className="footer-link" to="/news" element={<News />}>
               News
             </Link>
           </Space>

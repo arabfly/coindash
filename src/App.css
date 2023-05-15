@@ -23,6 +23,18 @@
 
 
 .nav-main-container{
+    
+    margin-left: 13vw;
+    margin-right: 13vw;
+    background: #050605;
+    background-color: #050605;
+}
+
+.crypto-details-container {
+    background-color: bisque;
+}
+
+.crypto-detail-in-container {
     margin-left: 10vw;
     margin-right: 10vw;
 }
@@ -45,6 +57,7 @@
     margin-top: 50px;
     margin-left: 10vw; 
     margin-right: 10vw;
+    margin-bottom: 100px;
     background-color: #050605;
 }
 
@@ -65,7 +78,7 @@
 }
 
 .news-page {
-    margin-left: 10vw; 
+    margin-left: 10vw;
     margin-right: 10vw;
     margin-bottom: 10vw;
 }
@@ -75,7 +88,6 @@
     padding: 10px;
     background-color: #f47952;
     color: black;
-    font-weight: 300;
     font-size: 1rem;
     font-weight: 500;
     transition: ease-in 0.3s;
@@ -96,18 +108,20 @@
     background:linear-gradient(-135deg, white, #f47952);
     color: black;
     display: flex;
-    padding-top: 10px;
+    padding: 1vh;
     justify-content: center;
     margin-top: 50px;
-    margin-left: 150px;
-    margin-right: 150px;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    column-gap: 4vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
     border-radius: 50px;
     align-items: center;
 
 }
 
 .grid-item {
-    margin: 40px 40px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -118,7 +132,7 @@
 }
 
 .vertical-line {
-    display: inline-block;
+    display: none;
         border-left: 2px solid rgb(0, 0, 0);
         margin: 0 10px;
         height: 120px;
@@ -241,20 +255,25 @@ ul {
 
 
 .hero-main {
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     height: 700px;
-    width: 100vw;
+    width: 90vw;
     display: flex;
+    flex-wrap: wrap;
+    margin-left: 5vw;
     font-family: 'Roboto', sans-serif;
     background: #050605;
 }
 
 .hero-bitcoin {
-    width: 800px;
+    max-width: 800px;
+    width: 50vw;
 }
 
 .hero-container {
+    display: flex;
+    justify-content: center;
     color: rgb(255, 255, 255);
 } 
 
@@ -321,8 +340,26 @@ ul {
     justify-content: center;
     border-radius: 50px;
     padding: 10px;
-    max-width: 300px;
+    width: 250px;
+    max-width: 250px;
+    border: solid 3px transparent;
 
+}
+
+.crypto-card-2 {
+     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    padding: 10px;
+    width: 250px;
+    max-width: 250px;
+}
+
+.crypto-card:hover {
+    border: solid 3px #f47952;
+    border-radius: 50px;
 }
 
 .crypto-name {
@@ -344,6 +381,7 @@ ul {
     margin-right: 65px;
     padding: 10px;
     border-radius: 50px;
+    width: 125px;
     justify-content: center;
     
 }
@@ -357,6 +395,7 @@ ul {
 }
 
 .positive-change {
+    list-style: "↑";
     display: flex;
     align-items: center;
     color: rgb(0, 255, 0);
@@ -369,55 +408,178 @@ ul {
 }
 
 .news-home-title {
+    font-size: 2rem;
     color: white;
 
 }
 
-@media screen and (max-width:1300px){
-    .main{
-        margin-left: 50px;
+.news-container {
+    display: flex;
+    flex-flow: row wrap;
+    row-gap: 40px;
+    column-gap: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-icon{
+    display: none;
+}
+
+@media screen and (max-width:1275px) {
+    .hero-img {
+        display: none;
+    }
+
+    .hero-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .hero-title-logo-container {
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .hero-main {
+        margin: 0;
+        
+    }
+
+    .hero-p {
+        display: flex;
+        text-align: center;
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+
     }
 }
 
-@media screen and (max-width:1170px){
-    .main{
-        margin-left: 50px;
-    }
-}
+
+
 
 @media screen and (max-width:1000px){
-    .main{
-        margin-left: 100px;
+    .news-home-title  {
+        font-size: 1.2rem;
     }
-}
 
-@media screen and (max-width:800px){
+    
+    .news-heading > p {
+        width: 75v;
+        font-size: .5rem;
+    }
+
+    .nav-menu.active {
+        background: #f47952;
+        opacity: 1;
+        transition: all 0.5s;
+        z-index: 1;
+        right: 0;
+      }
+    
+    .coin-value-statistics {
+        width: 100vw;
+    }
+
+    .menu-icon {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: white;
+        transform: translate(-200%, 100%);
+        font-size: 1.8rem;
+        cursor: pointer;
+      }
+
+    .nav-menu {
+      
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 45vh;
+        position: absolute;
+        top: 100px;
+        right: -100%;
+        opacity: 1;
+        transition: all 0.5s;
+      }
+
+    ul > li {
+        padding: 50px;
+    }
+
+    .nav-list-style {
+        color: black;
+    }
+
+
+    .hero-p {
+        display: flex;
+        text-align: center;
+        font-size: 1.1rem;
+        width: 60vw;
+        margin-bottom: 30px;
+
+    }
     .app{
         flex-direction: column;
         overflow: hidden;
     }
 
     .navbar{
+        background-color: #050605;
         flex: 1;
     }
 
     .main{
         flex: 1;
-        margin-top: 90px;
         margin-left: 0px;
-        margin-right: 10px;
+        margin-right: 0px;
     }
 
     .nav-container{
-        height: 8vh;
-        position:fixed;
+        justify-content: start;
         width: 100%;
         z-index: 100;
-        background-color: var(--bgSecondary);
+        background-color: #050605;
+    }
+
+    .nav-main-container {
+        margin-left: 8vw;
+        margin-right: 8vw;
+        background-color: #050605;
+    }
+
+    .hero-container-text {
+        display: flex;
+        justify-content: center;
+    }
+
+    ul {
+        flex-direction: column;
+    }
+    
+    .mobile-icon {
+        cursor: pointer;
+        margin-top: 20px;
+        margin-right: 8vw;
+        color: white;
+    }
+
+    .logo-style {
+        
+        justify-content: center;
+        font-size: 1.5rem;
     }
   
     .menu-control-container{
         display: block !important;
+    }
+
+    .nav-logo {
+        display: none;
     }
 
     .ant-menu{
@@ -425,7 +587,7 @@ ul {
         right: 0px;
     }
     .home-title{
-        font-size: 1.4rem !important;
+        font-size: 1.2rem !important;
     }
     .show-more{
         font-size: 1.3rem !important;
@@ -469,7 +631,16 @@ ul {
     font-weight: 700;
     font-size: 1.4rem;
     margin-top: 20px;
-    color: var(--pink);
+}
+
+.other-stats-info {
+    width: 50vw;
+    margin-top: 50px;
+    background-color: #050605;
+    color: white;
+    padding: 25px;
+    border-radius: 50px;
+    
 }
 
 .coin-details-heading{
@@ -485,6 +656,7 @@ ul {
     font-size: 1rem;
     opacity: 0.9;
     padding: 20px;
+    color: white;
 
 }
 
@@ -498,9 +670,21 @@ ul {
     font-weight: 800;
 }
 
+.coin-value-statistics{
+    width: 50vw;
+    margin-top: 50px;
+    background-color: #050605;
+    color: white;
+    padding: 25px;
+    border-radius: 50px;
+
+
+}
+
 .coin-value-statistics-heading p{
     font-size: 1rem;
     opacity: 0.9;
+    color: white;
 }
 
 .coin-desc-link{
@@ -508,6 +692,7 @@ ul {
     gap: 40px;
     margin-top: 40px;
     padding-top: 20px;
+    
 }
 
 .coin-desc-link h2{
@@ -558,6 +743,7 @@ ul {
 
 .coin-link:hover, .coin-stats:hover{
     background-color: var(--bgSecondary);
+    
 }
 
 @media screen and (max-width:1000px){
@@ -587,7 +773,16 @@ ul {
 }
 
 .select-news{
-    width: 180px;
+    margin-top: 50px;
+    margin-bottom: 60px;
+    width: 500px;
+    border: solid 3px #f47952;
+    border-radius: 10px;
+}
+
+.news-selector {
+    display: flex;
+    justify-content: center;
 }
 .news-card{
     min-height: 300px !important;
@@ -641,8 +836,9 @@ font-size: 1rem;
     color: white;
 }
 .chart-title{
+    font-family: 'Bai Jamjuree', sans-serif;
     margin-top: 50px;
-    color: white !important;
+    color: black !important;
 }
 .price-container{
     display: flex !important;
@@ -665,10 +861,15 @@ font-size: 1rem;
     gap: 20px;
     align-items: center;
     margin-top: 200px;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
 }
 .show-more{
     margin-top: 10px;
+}
+
+.column-text {
+    color: white;
+    font-size: 2rem;
 }
 
 .exchange-image{
@@ -680,12 +881,14 @@ font-size: 1rem;
 }
 .crypto-card-container{
     display: flex;
+    flex-flow: row wrap;
     justify-content: center;
     align-items: center;
     min-height: 40vh !important;
     transition: all 0.3s ease;
     margin-top: 75px;
-    gap: 100px;
+    column-gap: 100px;
+    row-gap: 50px;
 }
 
 .crypto-card .crypto-image{
@@ -697,19 +900,32 @@ font-size: 1rem;
 }
 
 .footer {
-    background-color: #001529;
+    background-color: #f47952;
     display: flex;
+    color: black;
     flex-direction: column;
     padding: 20px;
     align-items: center;
 }
 
+.footer-link {
+    padding: 20px;
+    color: black;
+    font-weight: 900;
+}
+
+.footer-links {
+    margin-top: 10px;
+}
+
+
 .cardBox {
     width: 350px;
     height: 300px;
     position: relative;
-    display: grid;
-    place-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
     border-radius: 20px;
 
@@ -729,7 +945,7 @@ font-size: 1rem;
     text-align: center;
     color: black;
     overflow: hidden;
-    padding: 10px;
+    padding: 20px;
     cursor: pointer;
   }
   
@@ -771,4 +987,49 @@ font-size: 1rem;
   .card:hover .h4 {
     opacity: 0;
   }
+
+  .about-us {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: start;
+    margin-left: 20vw;
+    margin-right: 20vw;
+    margin-bottom: 150px;
+
+  }
+
+  .about-us > h1 {
+    font-size: 2rem;
+  }
+
+  .about-us > p {
+    font-size: 1.5rem;
+  }
+
+  .news-heading > p{
+    font-size: 1rem;
+    margin-left: 10vw;
+    margin-bottom: 50px;
+    margin-top: 20px;
+    width: 45vw;
+  }
+
+  .stats-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 150px;
+  }
+
+  .stats-img {
+    width: 60vw;
+    height: 300px;
+    border-radius: 50px;
+    object-fit: cover;
+  }
+
+
+  
   
