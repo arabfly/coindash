@@ -1,6 +1,8 @@
+/* global BigInt */
+
 import React from "react";
 import millify from "millify";
-import { Typography, Row, Col, Statistic } from "antd";
+import { Typography } from "antd";
 import { Link } from "react-router-dom";
 
 import { useGetCryptosQuery } from "../services/cryptoApi";
@@ -113,7 +115,10 @@ const Homepage = () => {
               </Link>
             </h1>
           </div>
-          <p className="news-p">
+          <p
+            className="
+          "
+          >
             Stay informed by using our search feature for the latest news on
             your favorite cryptocurrencies
           </p>

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Button, Menu, Typography, Avatar } from "antd";
 import { NavLink, Link } from "react-router-dom";
 import icon from "./images/logo.png";
 import { GiHamburgerMenu } from "react-icons/gi";

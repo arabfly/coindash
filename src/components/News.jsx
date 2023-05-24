@@ -5,13 +5,10 @@ import moment from "moment";
 
 import { useGetCryptoNewsQuery } from "../services/cryptoNewsApi";
 import { useGetCryptosQuery } from "../services/cryptoApi";
-import bitcoin from "./images/bitcoin.png";
 import demoImage from "./images/logo.png";
 
 import Loader from "./Loader";
 
-// Typography and Select
-const { Text, Title } = Typography;
 const { Option } = Select;
 
 // News
